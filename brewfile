@@ -1,0 +1,5 @@
+tap homebrew/dupes
+install openssl
+install josegonzalez/php/composer
+install wget
+install postgresql
