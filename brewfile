@@ -1,8 +1,9 @@
 tap homebrew/dupes
 install openssl
-install josegonzalez/php/composer
 install wget
-install postgresql
+install docker
+
+install sbt
 
 install caskroom/cask/brew-cask
 
@@ -16,8 +17,11 @@ cask install vagrant
 
 cask install google-chrome
 cask install iterm2
-cask install sequel-pro
 cask install macvim
+cask install slack
+cask install rdio
+cask install vlc
+cask install sequel-pro
 
 cask install textexpander
 cask install the-unarchiver
