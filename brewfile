@@ -2,6 +2,7 @@ tap homebrew/dupes
 install openssl
 install wget
 install docker
+install boot2docker
 
 install sbt
 
