@@ -1,8 +1,6 @@
 tap homebrew/dupes
 install openssl
 install wget
-install docker
-install boot2docker
 
 install sbt
 
@@ -12,7 +10,9 @@ install caskroom/cask/brew-cask
 cask install alfred
 cask install caffeine
 
-cask install virtualbox
+cask install dockertoolbox
+# installs virtualbox as well
+
 cask install vagrant
 
 cask install google-chrome
