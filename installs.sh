@@ -50,6 +50,7 @@ brew cask install google-drive && \
 brew cask install google-hangouts && \
 brew cask install thunderbird && \
 brew cask install visualvm && \
+brew cask install postman && \
 
 #Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
 #Ensure that the docker VM runs when you run your terminal
