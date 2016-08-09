@@ -9,7 +9,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 #Activate any plugins you want for Oh-My-Zsh
 #See https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins for available plugins
-sed "s/plugins=.*/plugins=(git mvn brew sbt docker vagrant)/g" ~/.zshrc && \
+sed "s/plugins=.*/plugins=(git mvn brew sbt docker docker-compose vagrant)/g" ~/.zshrc && \
 
 #Various command line tools:
 brew install ssh-copy-id && \
@@ -42,15 +42,13 @@ brew cask install caffeine && \
 brew cask install vagrant && \
 brew cask install vagrant-manager && \
 brew cask install iterm2 && \
-brew cask install macvim && \
 brew cask install visual-studio-code && \
 brew cask install sublime-text && \
 brew cask install google-chrome && \
 brew cask install google-drive && \
 brew cask install google-hangouts && \
-brew cask install thunderbird && \
 brew cask install visualvm && \
-brew cask install postman && \
+brew cask install spectacle && \
 
 #Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
 #Ensure that the docker VM runs when you run your terminal
@@ -58,12 +56,20 @@ brew cask install dockertoolbox && \
 docker-machine create --driver "virtualbox" --virtualbox-memory "8192" --virtualbox-cpu-count "8" --virtualbox-disk-size "60000" default && \
 docker-machine env default && \
 echo 'eval $(docker-machine env default)' >> ~/.zshrc && \
+#my alias for docker-compose, careful overrides some unix tool also named 'dc'
+echo 'alias dc="docker-compose"' >> ~/.zshrc && \
 
 #IDE
 brew cask install intellij-idea && \
 
-#Ansible
+#Install Python
 brew install python && \
+pip install --upgrade pip && \
+pip install httplib2 && \
+pip install requests && \
+pip install requests_oauthlib && \
+
+#Ansible
 pip install ansible && \
 
 #NodeJS stuff
@@ -75,5 +81,7 @@ npm -g install eslint && \
 brew tap gbeine/homebrew-java && \
 brew install mysql-connector-java && \
 
-#MySQL Client
-brew cask install sequel-pro
+brew cask install sequel-pro && \
+
+brew install hub
+
