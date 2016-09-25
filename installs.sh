@@ -1,11 +1,13 @@
+#!/usr/bin/env bash
 
 #Homebrew, mas-cli, brew cask: everything you need to install software on a mac
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
-brew install mas && && \
+# brew install mas && && \ #Not currently used in the script
 brew tap caskroom/cask && \
 
 #Oh-My-Zsh - Install first so that we can add plugins as we install other software
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+#Alternative: https://github.com/sorin-ionescu/prezto this script assumes oh-my-zsh though, you might want to create a pretzo version
 
 #Activate any plugins you want for Oh-My-Zsh
 #See https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins for available plugins
@@ -16,18 +18,20 @@ brew install ssh-copy-id && \
 brew install tomcat7 && \
 brew install tree && \
 brew install liquibase && \
-
 #TODO: Set liquibase home to whatever it says after the brew installation
+
 #See: https://github.com/nvbn/thefuck
 brew install thefuck && \
 echo 'eval "$(thefuck --alias)"' >> ~/.zshrc && \
 
-#Java
+#Java -> NB! this will install the latst version, while you might want to use 1.8.0_20 to build the main AppDirect repo
 brew cask install java && \
 
 #Install maven and set the JVM memory settings for it
-brew tap homebrew/versions && \
-brew install maven32 && \
+# In case you need an older version of maven...Most likely not
+# brew tap homebrew/versions && \
+# brew install maven32 && \
+brew install maven && \
 touch ~/.mavenrc && \
 echo 'export MAVEN_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"' >> ~/.mavenrc && \
 echo 'export MAVEN_OPTS="-Xms1024m -Xmx2048m -noverify -XX:MaxMetaspaceSize=760m"' >> ~/.mavenrc && \
@@ -49,18 +53,29 @@ brew cask install google-drive && \
 brew cask install google-hangouts && \
 brew cask install visualvm && \
 brew cask install spectacle && \
+brew cask install archiver && \
+brew cask install jing && \
 
 #Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
+#NB: You might be better off using Docker for Mac, for which, unfortunatelly, no cask exists yet
+
 #Ensure that the docker VM runs when you run your terminal
-brew cask install dockertoolbox && \
-docker-machine create --driver "virtualbox" --virtualbox-memory "8192" --virtualbox-cpu-count "8" --virtualbox-disk-size "60000" default && \
-docker-machine env default && \
-echo 'eval $(docker-machine env default)' >> ~/.zshrc && \
-#my alias for docker-compose, careful overrides some unix tool also named 'dc'
+#brew cask install dockertoolbox && \
+#docker-machine create --driver "virtualbox" --virtualbox-memory "8192" --virtualbox-cpu-count "8" --virtualbox-disk-size "60000" default && \
+#docker-machine env default && \
+#echo 'eval $(docker-machine env default)' >> ~/.zshrc && \
+
+#My alias for docker-compose, careful overrides some unix tool also named 'dc'
 echo 'alias dc="docker-compose"' >> ~/.zshrc && \
 
 #IDE
 brew cask install intellij-idea && \
+
+#Openconnect: Install only if using it
+#brew install openconnect && \
+
+#Example for creating an alias for a particular VPN, so you can quickly connect
+#alias my_vpn_alias="sudo openconnect --authgroup=[authgroup-goes-here] --user=[username-goes-here] [VPN-to-connect to]"
 
 #Install Python
 brew install python && \
@@ -81,7 +96,11 @@ npm -g install eslint && \
 brew tap gbeine/homebrew-java && \
 brew install mysql-connector-java && \
 
+#MySQL DB client
 brew cask install sequel-pro && \
 
-brew install hub
+# GitHub goodies" https://hub.github.com/
+brew install hub && \
+echo 'eval "$(hub alias -s)"' >> ~/.zshrc
+
 
