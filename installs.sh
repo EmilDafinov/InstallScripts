@@ -67,6 +67,8 @@ brew cask install jing && \
 
 #My alias for docker-compose, careful overrides some unix tool also named 'dc'
 echo 'alias dc="docker-compose"' >> ~/.zshrc && \
+echo 'alias docker_clean_images="docker rmi $(docker images -a --filter=dangling=true -q)"'
+echo 'alias docker_clean_ps="docker rm $(docker ps --filter=status=exited --filter=status=created -q)"'
 
 #IDE
 brew cask install intellij-idea && \
