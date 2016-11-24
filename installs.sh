@@ -69,7 +69,7 @@ brew cask install jing && \
 echo 'alias dc="docker-compose"' >> ~/.zshrc && \
 echo 'alias docker_clean_images="docker rmi $(docker images -a --filter=dangling=true -q)"'
 echo 'alias docker_clean_ps="docker rm $(docker ps --filter=status=exited --filter=status=created -q)"'
-
+#alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}" -a'
 #IDE
 brew cask install intellij-idea && \
 
