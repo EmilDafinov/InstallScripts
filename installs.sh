@@ -39,6 +39,7 @@ echo 'export MAVEN_OPTS="-Xms1024m -Xmx2048m -noverify -XX:MaxMetaspaceSize=760m
 #Scala
 brew install scala && \
 brew install sbt && \
+brew install giter8 && \
 
 #Various desktop apps
 brew cask install slack && \
