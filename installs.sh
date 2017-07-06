@@ -54,6 +54,7 @@ brew cask install google-drive && \
 brew cask install google-hangouts && \
 brew cask install visualvm && \
 brew cask install spectacle && \
+brew cask install bettertouchtool && \
 brew cask install archiver && \
 brew cask install jing && \
 
