@@ -50,6 +50,7 @@ brew cask install iterm2 && \
 brew cask install visual-studio-code && \
 brew cask install sublime-text && \
 brew cask install google-chrome && \
+brew cask install lastpass && \
 brew cask install google-drive && \
 brew cask install google-hangouts && \
 brew cask install visualvm && \
@@ -60,6 +61,8 @@ brew cask install jing && \
 
 #Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
 #NB: You might be better off using Docker for Mac, for which, unfortunatelly, no cask exists yet
+
+brew cask install docker && \ # Apparently this installs docker for mac. Untested
 
 #Ensure that the docker VM runs when you run your terminal
 #brew cask install dockertoolbox && \
