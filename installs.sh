@@ -58,6 +58,7 @@ brew cask install spectacle && \
 brew cask install bettertouchtool && \
 brew cask install archiver && \
 brew cask install jing && \
+brew cask install gitter &&\
 
 #Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
 #NB: You might be better off using Docker for Mac, for which, unfortunatelly, no cask exists yet
