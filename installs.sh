@@ -94,9 +94,6 @@ npm -g install eslint && \
 brew tap gbeine/homebrew-java && \
 brew install mysql-connector-java && \
 
-#MySQL DB client
-brew cask install sequel-pro && \
-
 # GitHub goodies" https://hub.github.com/
 brew install hub && \
 echo 'eval "$(hub alias -s)"' >> ~/.zshrc
