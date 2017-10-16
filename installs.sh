@@ -59,17 +59,7 @@ brew cask install bettertouchtool && \
 brew cask install archiver && \
 brew cask install jing && \
 brew cask install gitter &&\
-
-#Docker toolbox: (docker, docker-machine, virtualbox, kitematic)
-#NB: You might be better off using Docker for Mac, for which, unfortunatelly, no cask exists yet
-
-brew cask install docker && \ # Apparently this installs docker for mac. Untested
-
-#Ensure that the docker VM runs when you run your terminal
-#brew cask install dockertoolbox && \
-#docker-machine create --driver "virtualbox" --virtualbox-memory "8192" --virtualbox-cpu-count "8" --virtualbox-disk-size "60000" default && \
-#docker-machine env default && \
-#echo 'eval $(docker-machine env default)' >> ~/.zshrc && \
+brew cask install docker && \
 
 #My alias for docker-compose, careful overrides some unix tool also named 'dc'
 echo 'alias dc="docker-compose"' >> ~/.zshrc && \
