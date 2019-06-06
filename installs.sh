@@ -4,20 +4,23 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
 # brew install mas && && \ #Not currently used in the script
 brew tap caskroom/cask && \
+brew tap caskroom/versions && \
+brew cask install caskroom/versions/adoptopenjdk8 &&\ # if we need java8
 
 #Oh-My-Zsh - Install first so that we can add plugins as we install other software
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
 #Alternative: https://github.com/sorin-ionescu/prezto this script assumes oh-my-zsh though, you might want to create a pretzo version
+# Also, zim :)
 
 #Activate any plugins you want for Oh-My-Zsh
 #See https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins for available plugins
-sed "s/plugins=.*/plugins=(git mvn brew sbt docker docker-compose vagrant)/g" ~/.zshrc && \
+#sed "s/plugins=.*/plugins=(git mvn brew sbt docker docker-compose vagrant)/g" ~/.zshrc && \
 
 #Various command line tools:
 brew install ssh-copy-id && \
-brew install tomcat7 && \
+#brew install tomcat7 && \
 brew install tree && \
-brew install liquibase && \
+#brew install liquibase && \
 #TODO: Set liquibase home to whatever it says after the brew installation
 
 #See: https://github.com/nvbn/thefuck
@@ -44,8 +47,6 @@ brew install giter8 && \
 #Various desktop apps
 brew cask install slack && \
 brew cask install caffeine && \
-brew cask install vagrant && \
-brew cask install vagrant-manager && \
 brew cask install iterm2 && \
 brew cask install visual-studio-code && \
 brew cask install sublime-text && \
@@ -76,23 +77,23 @@ brew cask install intellij-idea && \
 #alias my_vpn_alias="sudo openconnect --authgroup=[authgroup-goes-here] --user=[username-goes-here] [VPN-to-connect to]"
 
 #Install Python
-brew install python && \
-pip install --upgrade pip && \
-pip install httplib2 && \
-pip install requests && \
-pip install requests_oauthlib && \
+#brew install python && \
+#pip install --upgrade pip && \
+#pip install httplib2 && \
+#pip install requests && \
+#pip install requests_oauthlib && \
 
 #Ansible
-pip install ansible && \
+#pip install ansible && \
 
 #NodeJS stuff
-brew install node && \
-npm install gulp -g && \
-npm -g install eslint && \
+#brew install node && \
+#npm install gulp -g && \
+#npm -g install eslint && \
 
 #MySql driver
-brew tap gbeine/homebrew-java && \
-brew install mysql-connector-java && \
+#brew tap gbeine/homebrew-java && \
+#brew install mysql-connector-java && \
 
 # GitHub goodies" https://hub.github.com/
 brew install hub && \
